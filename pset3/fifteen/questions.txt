@@ -1,0 +1,9 @@
+questions.txt
+
+Computer Science 50
+Problem Set 3
+
+0. Game allows square dimensions of size 3 to 9 i.e 3*3, 4*4 and so on upto 9*9
+1. Two-dimensional array of type "Int" is used to represent game board.
+2. Function "greet" is used to greet the player at the start of the game along with instructions.
+3. Functions "init","draw","move" and "won" are required to be implemented.
