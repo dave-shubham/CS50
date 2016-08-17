@@ -1,0 +1,35 @@
+0.  A lung disease caused by inhaling very fine ash.
+
+1.  getrusage returns the usage of various resources of CPU by a given process, its children or any calling thread.
+
+2.  struct rusage has 16 variables stored in it.
+
+3.  Here, even if we pass by value, it won't make much difference in fact, it will only make it faster. 
+But, if we were to change values of parameters, passing by reference is required.
+
+4.  The outermost for loop reads each character in the file till the End of File (feof). 
+Index indicates the position of given character in the word with zero-based indexing. 
+First check is whether the read character is an apostrophe (which is not the first letter of the word) or alphabet. 
+If its true, the character is added to character array "word" which stores any word upto 45 characters. 
+If we find a word longer than that, the empty while loop continues reading upto end of the word and initiates index character for next word to 0.
+If the above check returns false, the next check is for numeric/alphanumeric data and again with empty while loop this word is skipped.
+If none of the above returns true, that means we have found some other character like space,tab,etc. and so we end the storing of word by appending '\0'.
+Incrementing the word counter, we check if the word we found is present or not in our dictionary and time required to check is recorded too.
+The time recorded is then added to the time recorded for all the previous words and then if the above check returned false, we print the word and increment the counter of misspelled words.
+
+5.  Taking each character, we ensured that we could find each word boundary by evaluating whether it's alphabet, numeric, apostrophe or other characters.
+Doing the same with fscanf would have be much more complicated considering fscanf would simply take everything as a character without separating as above.
+The code would take http://www.google.com as a single input instead, it had to check word "http","www","google" and "com" as four words.
+
+6.  Passing the arguments with const would make the inputted parameter unalterable.
+Hence, preventing the program from altering a word or address inputted by user (even unintentionally).
+
+7.  I have used Trie for storage of dictionary and the structure of Trie contains a array of 27 pointers that connects current nodes to its child nodes 
+and an integer which denotes if the current node is the EOW (End of Word).
+
+8.  The code worked about the same time it is working now. 
+
+9.  I had a few memory leakages and through Valgrind, I found out those places and freed memory. 
+Besides it, initially I used an extra string to get the word to be checked in lower case completely but it didn't affect the timing much.
+
+10. Code is working logically correct without memory leaks yet, it needs to speed up in its working by some minor changes. (which at present I don't even know)
